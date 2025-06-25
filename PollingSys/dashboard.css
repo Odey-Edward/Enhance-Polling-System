@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box;
+    font-family: Tahoma,'Segoe UI', Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 2px 4px 6px rgba(226, 26, 26, 0.719);
+}
+
+header .app_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+header .functionality {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+header .functionality p {
+    border: 1px solid black;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 250px 50px 250px;
+    background-color: rgb(223, 216, 207);
+}
+
+.edit {
+    margin-bottom: 30px;
+}
+
+.edit_1 {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.edit_1 #poll_title {
+    line-height: 40px;
+    font-size: 40px;
+    padding: 20px 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.edit_1 #poll_title:focus {
+    outline: none;
+}
+
+.edit_1 #poll_title::placeholder {
+    color: black;
+    font-weight:lighter;
+    letter-spacing: 1.8px;
+}
+
+.edit_1 #poll_discription {
+    font-size: 14px;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.edit_1 #poll_discription:focus {
+    outline: none;
+}
+
+
+
+.edit_2 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.question_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.question_container input {
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 15px 10px;
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.question_container input:focus {
+    outline: none;
+}
+
+.question_container input::placeholder {
+    color: black;
+}
+
+
+.option_container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.option_container .radio {
+    transform: scale(1.5);
+    width: 40px;
+}
+
+.option {
+    font-size: 15px;
+    flex: 1;
+    border: none;
+    padding: 5px 5px;
+}
+
+.option:focus {
+    outline: none;
+    
+}
+
+.option:hover {
+    border-bottom: 1px solid rgb(216, 215, 215);
+}
+
+.option::placeholder {
+    color: black;
+}
+
+.delete_option {
+    border: 1px solid black;
+    margin-left: 10px;
+}
+
+.delete_question{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.functions_div {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    position:fixed;
+    bottom: 50px;
+    left: 150px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* Dashbord Styles */
+
+.analytic_div {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 50px 50px 0px 50px;
+    border-radius: 0px 0px 5px 5px;
+    align-items:end;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bar {
+    border: 1px solid black;
+    width: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: none;
+    position: relative;
+    margin: 0;
+    background-color: lightblue;
+}
+
+.bar p {
+    position: absolute;
+    top: -10px;
+    right: -32px;
+    border: 1px solid red;
+    padding: 5px;
+}
+
+.add_div{
+    border: 1px solid red;
+}
+
+.bar_1 {
+    height: 40%;
+}
+
+.bar_2 {
+    height: 60%;
+}
+
+.bar_3 {
+    height: 80%;
+}
+
+.bar_4 {
+    height: 100%;
+}
+
+.bar_5 {
+    height: 20%;
+}
+
+.bar_6 {
+    height: 60%;
+}
+
+.bar_7 {
+    height: 100%;
+}
+
+.analytic_question {
+    background-color: rgb(200, 255, 0);
+    padding: 20px 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    letter-spacing: 1px;
+}
+
+.chart_div {
+    margin-bottom: 50px;
+}
+
+footer {
+    border: 1px solid blue;
+}
+
+#loom-companion-mv3 {
+    display: none;
+}
