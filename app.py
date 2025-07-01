@@ -49,7 +49,7 @@ async def login(request: Request, data: Annotated[FormData, Form()], session: Se
 
     if dbStudent and dbStudent.password == data.password:
         return RedirectResponse(url=f"/student/dashboard?user={dbStudent.name}&matric={dbStudent.MatricNo}", status_code=302)
-    return template.TemplateResponse("login.html", {"request": request})
+    return templates.TemplateResponse("login.html", {"request": request})
 
 
 
@@ -76,9 +76,19 @@ Student Dashboard
 """
 
 @app.get("/student/dashboard", response_class=HTMLResponse)
-async def student_dashboard(request: Request, user: str, matric: str):
+async def student_dashboard(request: Request, user="Default Name", matric="Login"):
     return templates.TemplateResponse("student_dashboard.html", {"request": request, "name": user, "matricNo": matric})
 
+
+
+@app.get("/poll", response_class=HTMLResponse)
+async def student_poll(request: Request):
+    return templates.TemplateResponse("poll.html", {"request": request})
+
+
+@app.get("/history", response_class=HTMLResponse)
+async def poll_history(request: Request):
+    return templates.TemplateResponse("poll_history.html", {"request": request})
 
 """
 
