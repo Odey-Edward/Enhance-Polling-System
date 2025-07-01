@@ -6,7 +6,7 @@ from typing import Annotated
 
 #DATABASE_URL = "postgresql:///polldb"
 
-DATABASE_URL = postgresql://polldb_9abj_user:OGpUjzfW8UV0A25ewwUpjRPgs7D3HdpC@dpg-d1httf6r433s73bes0eg-a/polldb_9abj
+DATABASE_URL = "postgresql://polldb_9abj_user:OGpUjzfW8UV0A25ewwUpjRPgs7D3HdpC@dpg-d1httf6r433s73bes0eg-a/polldb_9abj"
 engine = create_engine(DATABASE_URL, echo=True)
 
 
