@@ -26,9 +26,9 @@ class FormData(BaseModel):
     model_config = {"extra": "forbid"}
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+        return templates.TemplateResponse("signup.html", {"request": request})
 
 
 
