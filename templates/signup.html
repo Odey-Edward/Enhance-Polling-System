@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/login.css') }}">
+</head>
+<body>
+    <form action="/signup" method="post">
+        <h3>Student Signup</h3>
+        <div class="input_div">
+            <label for="MatricNo">Matric No:</label>
+            <input type="text" name="MatricNo" required>
+        </div>
+
+	<div class="input_div">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+        </div>
+        
+        <div class="input_div">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <div class="input_div">
+            <label for="password">Confirm Password:</label>
+            <input type="password" name="password2" required>
+        </div>
+
+        <a href="#"><p>forgot password?</p></a>
+
+        <button type="submit">Login</button>
+
+        <p>don't have an account? <a href="#">Signup</a></p>
+    </form>
+</body>
+</html>
