@@ -10,136 +10,48 @@
 			<p>Student Dashboard</p>
 			<ul>
 				<a href="#"><li>Home</li></a>
-				<a href="/poll"><li>Polls</li></a>
+				<a href="#"><li>Polls</li></a>
 				<a href="/history"><li>History</li></a>
 				<a href="#"><li>Help</li></a>
-				<a href="/login"><li>Logout</li></a>
+				<a href="/logout"><li>Logout</li></a>
 			</ul>
 		</header>
 
 		<div class="body_2_div">
 			<div class="user_info">
-				<p>Welcome, <span>{{ name }}</span></p>
-				<p>Matric No: <span>{{ matricNo }}</span></p>
+				<p>Welcome, <span>{{ student.name }}</span></p>
+				<p>Matric No: <span>{{ student.matricNo }}</span></p>
 			</div>
 
 			<div class="main_container">
 				<section class="active_poll_container">
 
 				<div class="active_poll_title">
-					<p>Active Poll <span>8</span></p>
+					<p>Active Poll <span>{{ questions | length }}</span></p>
 				</div>
 
 				<div class="active_poll">
+					{% for question in questions %}
 
 					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
+						<p class="poll_date">{{ question.created_at.strftime('%B %d') }}</p>
+						<p class="poll_sub_title" style="margin-bottom: 25px;">Composary</p>
+						<H4>{{ question.value }}</H4>
 						<p class="poll_vote"><span>52</span> Vote</p>
 						<div class="start_poll_div">
-							<a href="#">
+							<a href="/poll/{{ question.id }}">
 								<p>Participate</p>
 								<img src="../static/images/icons8-start-50.png" alt="">
 							</a>
 						</div>
 					</div>
+					{% endfor %}
 
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					
-					</div>
-
-					<div class="poll_card">
-						<p class="poll_date">April 16</p>
-						<p class="poll_sub_title">Composary</p>
-						<H4>Course Evaluation Survey</H4>
-						<p class="poll_vote"><span>52</span> Vote</p>
-						<div class="start_poll_div">
-							<a href="#">
-								<p>Participate</p>
-								<img src="../static/images/icons8-start-50.png" alt="">
-							</a>
-						</div>
-					</div>
 				</div>
 
 				</section>
 
+				<!--
 				<section class="active_poll_container">
 
 				<div class="active_poll_title">
@@ -254,6 +166,7 @@
 				</div>
 
 				</section>
+				-->
 			</div>
 		</div>
 

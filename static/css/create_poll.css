@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.8px;
+}
+
+body {
+    padding: 150px 100px 120px 100px;
+    background-color: #373780;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: #373780;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 100px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header p {
+    font-size: 30px;
+    color: white;
+}
+
+header ul li {
+    border-left: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.poll_main_div {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.poll_main_div {
+    font-size: 25px;
+    color: white;
+}
+
+.form_div_1 {
+    display: flex;
+    border-bottom: 1px solid white;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+    height: 70px;
+}
+
+form {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0px;
+    background-color: #373780;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.poll_info {
+    padding: 0 50px;
+}
+
+form input {
+    height: 30px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+}
+
+form input:focus {
+    outline: none;
+}
+
+.form_div {
+    margin-bottom: 20px;
+}
+
+
+.form_logo_main_div {
+    display: flex;
+    align-items: center;
+}
+
+.form_logo_main_div p {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.form_image_div {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.form_image_div img {
+    height: 100%;
+    width: 100%;
+}
+
+.question_div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.question_div label {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color:white;
+}
+
+.question_div input {
+    padding: 0 10px;
+}
+
+.choice_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice_div input {
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+
+.choice_div label {
+    font-size: 17px;
+    color: white;
+}
+
+.form_action {
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+}
+
+.form_action button {
+    padding: 17px 30px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: #373780;
+}

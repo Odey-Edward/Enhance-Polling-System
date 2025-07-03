@@ -7,6 +7,10 @@
     color: white;
 }
 
+a {
+	text-decoration: none;
+}
+
 body {
     padding: 150px 80px 50px 80px;
     background-color: #373780;
@@ -46,6 +50,7 @@ header ul li {
     cursor: pointer;
     margin-left: 20px;
 }
+
 
 .welcome_section {
     margin-bottom: 30px;

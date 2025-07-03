@@ -15,55 +15,34 @@
                 	<a href="#"><li>Polls</li></a>
                         <a href="/history"><li>History</li></a>
                         <a href="#"><li>Help</li></a>
-                        <a href="/login"><li>Logout</li></a>
+                        <a href="/logout"><li>Logout</li></a>
         	</ul>
 	</header>
 
     <div class="main_poll_div">
         <div class="div_question">
-            <p>Course Evaluation Survey</p>
+		<p>{{ question.value }}</p>
         </div>
-
+	
         <div class="main_poll_answer_div">
-
+	  {% for choice in question.options %}
+	  <form method="post" action="/vote">
             <div class="poll_answer">
                 <div class="vote_div">
-                    <p class="poll_option">COS101 is very simple</p>
+			<p class="poll_option">{{ choice.text }}</p>
+			<input type="hidden" name="choice_id" value="{{ choice.id }}">
                     <div class="stats_div">
                         <div class="load_div">
-                            <div class="bars" style="width: 40%;"></div>
+				<div class="bars" style="width: {{ choice.percentage }}%;"></div>
                         </div>
-                        <p class="vote_result">25 voters</p>
+			<p class="vote_result">{{ choice.vote_count }} voters</p>
                     </div>
                 </div>
-                <a href="#" class="vote_btn">Vote</a>
+		<button type="submit" class="vote_btn">Vote</button>
+		<!--<a href="#" class="vote_btn">Vote</a>-->
             </div>
-
-            <div class="poll_answer">
-                <div class="vote_div">
-                    <p class="poll_option">COS101 is very simple</p>
-                    <div class="stats_div">
-                        <div class="load_div">
-                            <div class="bars" style="width: 60%;"></div>
-                        </div>
-                        <p class="vote_result">25 voters</p>
-                    </div>
-                </div>
-                <a href="#" class="vote_btn">Vote</a>
-            </div>
-
-            <div class="poll_answer">
-                <div class="vote_div">
-                    <p class="poll_option">I preffered we bring back PHY101C</p>
-                    <div class="stats_div">
-                        <div class="load_div">
-                            <div class="bars"></div>
-                        </div>
-                        <p class="vote_result">25 voters</p>
-                    </div>
-                </div>
-                <a href="#" class="vote_btn">Vote</a>
-            </div>
+	 </form>
+	{% endfor %}
         </div>
     </div>
 </body>

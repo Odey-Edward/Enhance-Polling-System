@@ -8,14 +8,20 @@
 </head>
 <body>
 
-	<header>
-		<p>Admin Dashboard</p>
+    <header>
+		<a href="/admin/dashboard" style="                                              text-decoration: none;
+			 	color: white;
+			 "><p>Admin Dashboard</p></a>
 		<ul>
-			<li>Create Poll</li>
-			<li>Manage Users</li>
-			<li>Results</li>
-			<li>Poll History</li>
-			<li>Settings</li>
+			<li><a href="/admin/dashboard" style="
+				color: white;
+				text-decoration: none;">Home</a></li>
+			<li><a href="/create_poll" style="
+				color: white;
+				text-decoration: none;">Create Poll</a></li>
+			<li><a href="/admin/logout" style="
+				color: white;
+				text-decoration: none;">Logout</a></li>
 		</ul>
 	</header>
 	
@@ -25,87 +31,57 @@
 
 	<section class="stats">
 		<div class="stats_item">
-			<p class="num">5</p>
+			<p class="num">{{ questions | length }}</p>
 			<p>Active Polls</p>
 		</div>
 
 		<div class="stats_item">
-			<p class="num">125</p>
+			<p class="num">{{ students | length }}</p>
 			<p>Total Students</p>
 		</div>
 
 		<div class="stats_item">
-			<p class="num">3</p>
+			<p class="num">5</p>
 			<p>Completed Polls</p>
 		</div>
 	</section>
 
 	<section class="active_poll">
+
 		<div class="active_poll_title">
 			<p>Active Polls</p>
-			<a href="#">Create New Poll</a>
+			<a href="/create_poll">Create New Poll</a>
 		</div>
 
 		<div class="active_poll_div">
+			{% for question in questions %}
+
+			<a href="/admin/poll/{{ question.id }}" style="text-decoration: none;">
 			<div class="active_poll_item">
+
 				<div class="sub_poll_div">
-					<p>Web Design</p>
-					<p>Survey Evaluating the Teaching Effectiveness of Our Lectures</p>
+					<p style="margin-bottom: 5px;">{{ question.options | length }} Choices</p>
+					<p>{{ question.value }}</p>
 				</div>
 				<div class="sub_poll_div">
-					<p>BY</p>
-					<p>Prof. Ayomide Ajayi</p>
-				</div>
-				<div class="sub_poll_div">
-					<p>Closing Date</p>
-					<p>May 31, 2025</p>
+					<p style="margin-bottom: 5px;">BY</p>
+					<p>Prof. Sani Aliyu</p>
 				</div>
 
 				<div class="sub_poll_div">
-					<p>Status</p>
+					<p style="margin-bottom: 5px;">Date Created</p>
+					<p>{{ question.created_at.strftime('%B %d, %Y') }}</p>
+				</div>
+
+				<div class="sub_poll_div">
+					<p style="margin-bottom: 5px;">Status</p>
 					<p>Active</p>
 				</div>
 			</div>
+			</a>
 
-			<div class="active_poll_item">
-				<div class="sub_poll_div">
-					<p>Web Design</p>
-					<p>Survey Evaluating the Teaching Effectiveness of Our Lectures</p>
-				</div>
-				<div class="sub_poll_div">
-					<p>BY</p>
-					<p>Prof. Ayomide Ajayi</p>
-				</div>
-				<div class="sub_poll_div">
-					<p>Closing Date</p>
-					<p>May 31, 2025</p>
-				</div>
+			{% endfor %}
 
-				<div class="sub_poll_div">
-					<p>Status</p>
-					<p>Active</p>
-				</div>
-			</div>
-
-			<div class="active_poll_item">
-				<div class="sub_poll_div">
-					<p>Web Design</p>
-					<p>Survey Evaluating the Teaching Effectiveness of Our Lectures</p>
-				</div>
-				<div class="sub_poll_div">
-					<p>BY</p>
-					<p>Prof. Ayomide Ajayi</p>
-				</div>
-				<div class="sub_poll_div">
-					<p>Closing Date</p>
-					<p>May 31, 2025</p>
-				</div>
-
-				<div class="sub_poll_div">
-					<p>Status</p>
-					<p>Active</p>
-				</div>
-			</div>
 
 		</div>
 	</section>

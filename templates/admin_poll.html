@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Title - {{ question.value }}</title>
+	
+    <link rel="stylesheet" href="{{ url_for('static', path='css/admin_poll.css') }}">
+</head>
+<body>
+
+    <header>
+		<a href="/admin/dashboard" style="                                              text-decoration: none;
+			 	color: white;
+			 "><p>Admin Dashboard</p></a>
+		<ul>
+			<li><a href="/admin/dashboard" style="
+				color: white;
+				text-decoration: none;">Home</a></li>
+			<li><a href="/create_poll" style="
+				color: white;
+				text-decoration: none;">Create Poll</a></li>
+			<li><a href="/admin/logout" style="
+				color: white;
+				text-decoration: none;">Logout</a></li>
+		</ul>
+	</header>
+
+    <div class="main_poll_div">
+        <div class="div_question">
+		<p>{{ question.value }}</p>
+        </div>
+	
+        <div class="main_poll_answer_div">
+	  {% for choice in question.options %}
+	  <form method="post" action="/vote">
+        <div class="poll_answer">
+            <div class="vote_div">
+			<p class="poll_option">{{ choice.text }}</p>
+			<input type="hidden" name="choice_id" value="{{ choice.id }}">
+                    <div class="stats_div">
+                        <div class="load_div">
+				<div class="bars" style="width: {{ choice.percentage }}%;"></div>
+                        </div>
+			<p class="vote_result" style="margin-left: 5px;">{{ choice.vote_count }} voters</p>
+                    </div>
+        </div>
+		<!--<button type="submit" class="vote_btn">Vote</button>-->
+		<!--<a href="#" class="vote_btn">Vote</a>-->
+        </div>
+	 </form>
+	{% endfor %}
+        </div>
+    </div>
+</body>
+</html>

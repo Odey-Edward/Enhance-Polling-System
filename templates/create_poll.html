@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+	
+    <link rel="stylesheet" href="{{ url_for('static', path='css/create_poll.css') }}">
+</head>
+<body>
+	
+    <header>
+		<a href="/admin/dashboard" style="                                              text-decoration: none;
+			 	color: white;
+			 "><p>Admin Dashboard</p></a>
+		<ul>
+			<li><a href="/admin/dashboard" style="
+				color: white;
+				text-decoration: none;">Home</a></li>
+			<li><a href="" style="
+				color: white;
+				text-decoration: none;">Create Poll</a></li>
+			<li><a href="/admin/logout" style="
+				color: white;
+				text-decoration: none;">Logout</a></li>
+		</ul>
+	</header>
+
+	<section class="poll_main_div">
+
+		<p>Create Polls</p>
+
+		<form action="/create_poll" method="post">
+			<div class="form_div_1 form_div">
+				<div class="form_logo_main_div">
+					<div class="form_image_div"><img src="../static/images/icons8-poll-50.png" alt=""></div>
+					<p class="form_logo_name">POLL</p>
+				</div>
+				<div class="form_image_div">
+					<img src="../static/images/icons8-check-mark-50.png" alt="">
+				</div>
+			</div>
+
+			<div class="poll_info">
+				
+				<div class="question_div form_div">
+					<label for="question">Question</label>
+					<input type="text" name="question" id="question" required>
+				</div>
+
+				<div class="choice_div form_div">
+					<label for="choice">Enter Choices</label>
+					<input type="text" name="choice1" id="choice1" placeholder="Choice 1 required" required>
+					<input type="text" name="choice2" id="choice2" placeholder="Choice 2 required" required>
+					<input type="text" name="choice3" id="choice3" placeholder="Choice 3">
+					<input type="text" name="choice4" id="choice4" placeholder="Choice 4">
+					<input type="text" name="choice5" id="choice5" placeholder="Choice 5">
+				</div>
+
+
+			</div>
+
+			<div class="form_action">
+				<button type="submit">Create</button>
+			</div>
+		</form>
+	</section>
+</body>
+</html>
