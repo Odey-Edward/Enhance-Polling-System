@@ -6,11 +6,13 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from models import SignUp, Student, Questions, Choices, Vote, Admin
 
+import os
 from pydantic import BaseModel
 from sqlmodel import select
 from typing import Annotated
 from urllib.parse import urlencode
 from uuid import UUID
+import uvicorn
 
 from session_manager import create_session, require_login
 from shema import PollData
@@ -342,3 +344,9 @@ def logout():
     response = RedirectResponse(url="/login", status_code=302)
     response.delete_cookie("session_token")
     return response
+
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
