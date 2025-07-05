@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+}
+
+header {
+    border-bottom: 1px solid black;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: white;
+    height: 100px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header ul li {
+    border: 1px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+header ul a {
+    text-decoration: none;
+}
+
+header p {
+    font-size: 30px;
+    color: #333333;
+    font-weight: 500;
+}
+
+
+section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+}
+
+.info_div {
+    margin-right: 50px;
+    width: 650px;
+}
+
+.sub_heading {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #333333;
+}
+
+.more_text {
+    margin-bottom: 40px;
+    font-size: 19px;
+}
+
+.info_div .poll_info {
+    line-height: 30px;
+}
+
+.main_heading {
+    font-size: 53px;
+    margin-bottom: 30px;
+    line-height: 50px;
+    color: #0458ff;
+    font-weight: 600;
+}
+
+.button_div {
+
+}
+
+.button_div a {
+    padding: 20px 40px;
+    border-radius: 30px;
+    border: none;
+    background: #0458ff;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button_div a:nth-child(1){
+    margin-right: 20px;
+}
+
+.button_div a:nth-child(2) {
+    background: white;
+    color: #0458ff;
+    border: 2px solid #0458ff;
+}
+
+.image_div {
+    height: 600px;
+    width: 600px;
+}
+
+.image_div img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 820px){
+    section {
+        flex-direction: column;
+    }
+}

@@ -46,7 +46,7 @@ class AdminFormData(BaseModel):
 
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-        return templates.TemplateResponse("signup.html", {"request": request})
+        return templates.TemplateResponse("landing_page.html", {"request": request})
 
 
 
